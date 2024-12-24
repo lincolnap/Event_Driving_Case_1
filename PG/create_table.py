@@ -2,9 +2,7 @@ import psycopg2
 from psycopg2 import sql
 from dotenv import load_dotenv,dotenv_values
 import os
-
-config = dotenv_values("postgres_secrets.env")
-load_dotenv(config)
+load_dotenv()
 
 
 db_config = {
