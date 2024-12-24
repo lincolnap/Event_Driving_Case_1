@@ -2,11 +2,15 @@ from kafka import KafkaConsumer,TopicPartition
 from secrets import secrets
 import psycopg2
 import json
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 conn = psycopg2.connect(
     database="streaming", 
-    user='postgres', 
-    password='postgres', 
+    user=f'{os.getenv("POSTGRES_USER")}', 
+    password=f'{os.getenv("POSTGRES_PASSWORD")}', 
     host="localhost", 
     port=5432
     )

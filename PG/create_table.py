@@ -1,11 +1,16 @@
 import psycopg2
 from psycopg2 import sql
+from dotenv import load_dotenv,dotenv_values
+import os
 
-# Configuración de conexión
+config = dotenv_values("postgres_secrets.env")
+load_dotenv(config)
+
+
 db_config = {
     "dbname": "streaming",  
-    "user": "postgres",       
-    "password": "postgres", 
+    "user": f"{os.getenv("POSTGRES_USER")}",       
+    "password": f"{os.getenv("POSTGRES_PASSWORD")}", 
     "host": "localhost",         
     "port": "5432"               
 }
