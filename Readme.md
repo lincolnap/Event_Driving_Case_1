@@ -12,6 +12,9 @@
  * [Postgres](./PG/)
  * [Files](./src/)
 
+## Arquitectura Utilizada
+![Arquitetura](./src/Arquitera_kafka.svg)
+
 ### Instalador de componentes
 Se encuenta un archivo makefile para simplicar la vida a la hora de levantar la infraestrutura
 
